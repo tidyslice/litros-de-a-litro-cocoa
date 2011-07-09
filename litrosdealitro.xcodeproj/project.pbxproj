@@ -1,0 +1,368 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A73B59FA13C8A26E008397C2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A73B59F913C8A26E008397C2 /* Default.png */; };
+		A74828AB13C81D8300E8FB45 /* EstadoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74828A913C81D8300E8FB45 /* EstadoController.m */; };
+		A74828AC13C81D8300E8FB45 /* EstadoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A74828AA13C81D8300E8FB45 /* EstadoController.xib */; };
+		A74828B513C8224600E8FB45 /* MunicipioController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74828B313C8224600E8FB45 /* MunicipioController.m */; };
+		A74828B613C8224600E8FB45 /* MunicipioController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A74828B413C8224600E8FB45 /* MunicipioController.xib */; };
+		A74828BA13C8247400E8FB45 /* GasolinerasController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74828B813C8247400E8FB45 /* GasolinerasController.m */; };
+		A74828BB13C8247400E8FB45 /* GasolinerasController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A74828B913C8247400E8FB45 /* GasolinerasController.xib */; };
+		A74828BF13C8270700E8FB45 /* GasolineraController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74828BD13C8270700E8FB45 /* GasolineraController.m */; };
+		A74828C013C8270700E8FB45 /* GasolineraController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A74828BE13C8270700E8FB45 /* GasolineraController.xib */; };
+		A74C7EB813C6BC4C00C99635 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A74C7EB713C6BC4C00C99635 /* UIKit.framework */; };
+		A74C7EBA13C6BC4C00C99635 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A74C7EB913C6BC4C00C99635 /* Foundation.framework */; };
+		A74C7EBC13C6BC4C00C99635 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A74C7EBB13C6BC4C00C99635 /* CoreGraphics.framework */; };
+		A74C7EC213C6BC4C00C99635 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A74C7EC013C6BC4C00C99635 /* InfoPlist.strings */; };
+		A74C7EC513C6BC4C00C99635 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A74C7EC413C6BC4C00C99635 /* main.m */; };
+		A74C7EC813C6BC4C00C99635 /* litrosdealitroAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A74C7EC713C6BC4C00C99635 /* litrosdealitroAppDelegate.m */; };
+		A74C7ECB13C6BC4C00C99635 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A74C7EC913C6BC4C00C99635 /* MainWindow.xib */; };
+		A74C7ECE13C6BC4C00C99635 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = A74C7ECD13C6BC4C00C99635 /* MenuController.m */; };
+		A74C7ED113C6BC4C00C99635 /* MenuController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A74C7ECF13C6BC4C00C99635 /* MenuController.xib */; };
+		A79DDBDC13C89EB500559554 /* gasolinera.png in Resources */ = {isa = PBXBuildFile; fileRef = A79DDBDB13C89EB500559554 /* gasolinera.png */; };
+		A79DDBDF13C89F2C00559554 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79DDBDE13C89F2C00559554 /* MapKit.framework */; };
+		A7C2AAED13C7D36700FD47E2 /* cercanas_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A7C2AAEB13C7D36700FD47E2 /* cercanas_icon.png */; };
+		A7C2AAEE13C7D36700FD47E2 /* search_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A7C2AAEC13C7D36700FD47E2 /* search_icon.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A73B59F913C8A26E008397C2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = images/Default.png; sourceTree = SOURCE_ROOT; };
+		A74828A813C81D8300E8FB45 /* EstadoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EstadoController.h; sourceTree = "<group>"; };
+		A74828A913C81D8300E8FB45 /* EstadoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EstadoController.m; sourceTree = "<group>"; };
+		A74828AA13C81D8300E8FB45 /* EstadoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EstadoController.xib; sourceTree = "<group>"; };
+		A74828B213C8224600E8FB45 /* MunicipioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MunicipioController.h; sourceTree = "<group>"; };
+		A74828B313C8224600E8FB45 /* MunicipioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MunicipioController.m; sourceTree = "<group>"; };
+		A74828B413C8224600E8FB45 /* MunicipioController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MunicipioController.xib; sourceTree = "<group>"; };
+		A74828B713C8247400E8FB45 /* GasolinerasController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GasolinerasController.h; sourceTree = "<group>"; };
+		A74828B813C8247400E8FB45 /* GasolinerasController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GasolinerasController.m; sourceTree = "<group>"; };
+		A74828B913C8247400E8FB45 /* GasolinerasController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GasolinerasController.xib; sourceTree = "<group>"; };
+		A74828BC13C8270700E8FB45 /* GasolineraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GasolineraController.h; sourceTree = "<group>"; };
+		A74828BD13C8270700E8FB45 /* GasolineraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GasolineraController.m; sourceTree = "<group>"; };
+		A74828BE13C8270700E8FB45 /* GasolineraController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GasolineraController.xib; sourceTree = "<group>"; };
+		A74C7EB313C6BC4C00C99635 /* litrosdealitro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = litrosdealitro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A74C7EB713C6BC4C00C99635 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A74C7EB913C6BC4C00C99635 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A74C7EBB13C6BC4C00C99635 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A74C7EBF13C6BC4C00C99635 /* litrosdealitro-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "litrosdealitro-Info.plist"; sourceTree = "<group>"; };
+		A74C7EC113C6BC4C00C99635 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A74C7EC313C6BC4C00C99635 /* litrosdealitro-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "litrosdealitro-Prefix.pch"; sourceTree = "<group>"; };
+		A74C7EC413C6BC4C00C99635 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A74C7EC613C6BC4C00C99635 /* litrosdealitroAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = litrosdealitroAppDelegate.h; sourceTree = "<group>"; };
+		A74C7EC713C6BC4C00C99635 /* litrosdealitroAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = litrosdealitroAppDelegate.m; sourceTree = "<group>"; };
+		A74C7ECA13C6BC4C00C99635 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		A74C7ECC13C6BC4C00C99635 /* MenuController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuController.h; sourceTree = "<group>"; };
+		A74C7ECD13C6BC4C00C99635 /* MenuController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuController.m; sourceTree = "<group>"; };
+		A74C7ED013C6BC4C00C99635 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MenuController.xib; sourceTree = "<group>"; };
+		A79DDBDB13C89EB500559554 /* gasolinera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gasolinera.png; path = images/gasolinera.png; sourceTree = SOURCE_ROOT; };
+		A79DDBDE13C89F2C00559554 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A7C2AAEB13C7D36700FD47E2 /* cercanas_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cercanas_icon.png; path = images/cercanas_icon.png; sourceTree = SOURCE_ROOT; };
+		A7C2AAEC13C7D36700FD47E2 /* search_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search_icon.png; path = images/search_icon.png; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A74C7EB013C6BC4C00C99635 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A79DDBDF13C89F2C00559554 /* MapKit.framework in Frameworks */,
+				A74C7EB813C6BC4C00C99635 /* UIKit.framework in Frameworks */,
+				A74C7EBA13C6BC4C00C99635 /* Foundation.framework in Frameworks */,
+				A74C7EBC13C6BC4C00C99635 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A74C7EA813C6BC4C00C99635 = {
+			isa = PBXGroup;
+			children = (
+				A79DDBDE13C89F2C00559554 /* MapKit.framework */,
+				A74C7EBD13C6BC4C00C99635 /* litrosdealitro */,
+				A74C7EB613C6BC4C00C99635 /* Frameworks */,
+				A74C7EB413C6BC4C00C99635 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A74C7EB413C6BC4C00C99635 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A74C7EB313C6BC4C00C99635 /* litrosdealitro.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A74C7EB613C6BC4C00C99635 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A74C7EB713C6BC4C00C99635 /* UIKit.framework */,
+				A74C7EB913C6BC4C00C99635 /* Foundation.framework */,
+				A74C7EBB13C6BC4C00C99635 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A74C7EBD13C6BC4C00C99635 /* litrosdealitro */ = {
+			isa = PBXGroup;
+			children = (
+				A7C2AAF013C7D3CD00FD47E2 /* Views */,
+				A7C2AAEF13C7D3C100FD47E2 /* Controllers */,
+				A7C2AAE913C7D34B00FD47E2 /* Resources */,
+				A74C7EC613C6BC4C00C99635 /* litrosdealitroAppDelegate.h */,
+				A74C7EC713C6BC4C00C99635 /* litrosdealitroAppDelegate.m */,
+				A74C7EBE13C6BC4C00C99635 /* Supporting Files */,
+			);
+			path = litrosdealitro;
+			sourceTree = "<group>";
+		};
+		A74C7EBE13C6BC4C00C99635 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A74C7EBF13C6BC4C00C99635 /* litrosdealitro-Info.plist */,
+				A74C7EC013C6BC4C00C99635 /* InfoPlist.strings */,
+				A74C7EC313C6BC4C00C99635 /* litrosdealitro-Prefix.pch */,
+				A74C7EC413C6BC4C00C99635 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A7C2AAE913C7D34B00FD47E2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A73B59F913C8A26E008397C2 /* Default.png */,
+				A79DDBDB13C89EB500559554 /* gasolinera.png */,
+				A7C2AAEB13C7D36700FD47E2 /* cercanas_icon.png */,
+				A7C2AAEC13C7D36700FD47E2 /* search_icon.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A7C2AAEF13C7D3C100FD47E2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A74C7ECC13C6BC4C00C99635 /* MenuController.h */,
+				A74C7ECD13C6BC4C00C99635 /* MenuController.m */,
+				A74828A813C81D8300E8FB45 /* EstadoController.h */,
+				A74828A913C81D8300E8FB45 /* EstadoController.m */,
+				A74828B213C8224600E8FB45 /* MunicipioController.h */,
+				A74828B313C8224600E8FB45 /* MunicipioController.m */,
+				A74828B713C8247400E8FB45 /* GasolinerasController.h */,
+				A74828B813C8247400E8FB45 /* GasolinerasController.m */,
+				A74828BC13C8270700E8FB45 /* GasolineraController.h */,
+				A74828BD13C8270700E8FB45 /* GasolineraController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A7C2AAF013C7D3CD00FD47E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A74828BE13C8270700E8FB45 /* GasolineraController.xib */,
+				A74828B913C8247400E8FB45 /* GasolinerasController.xib */,
+				A74828B413C8224600E8FB45 /* MunicipioController.xib */,
+				A74828AA13C81D8300E8FB45 /* EstadoController.xib */,
+				A74C7EC913C6BC4C00C99635 /* MainWindow.xib */,
+				A74C7ECF13C6BC4C00C99635 /* MenuController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A74C7EB213C6BC4C00C99635 /* litrosdealitro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A74C7ED413C6BC4C00C99635 /* Build configuration list for PBXNativeTarget "litrosdealitro" */;
+			buildPhases = (
+				A74C7EAF13C6BC4C00C99635 /* Sources */,
+				A74C7EB013C6BC4C00C99635 /* Frameworks */,
+				A74C7EB113C6BC4C00C99635 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = litrosdealitro;
+			productName = litrosdealitro;
+			productReference = A74C7EB313C6BC4C00C99635 /* litrosdealitro.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A74C7EAA13C6BC4C00C99635 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = A74C7EAD13C6BC4C00C99635 /* Build configuration list for PBXProject "litrosdealitro" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A74C7EA813C6BC4C00C99635;
+			productRefGroup = A74C7EB413C6BC4C00C99635 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A74C7EB213C6BC4C00C99635 /* litrosdealitro */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A74C7EB113C6BC4C00C99635 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A74C7EC213C6BC4C00C99635 /* InfoPlist.strings in Resources */,
+				A74C7ECB13C6BC4C00C99635 /* MainWindow.xib in Resources */,
+				A74C7ED113C6BC4C00C99635 /* MenuController.xib in Resources */,
+				A7C2AAED13C7D36700FD47E2 /* cercanas_icon.png in Resources */,
+				A7C2AAEE13C7D36700FD47E2 /* search_icon.png in Resources */,
+				A74828AC13C81D8300E8FB45 /* EstadoController.xib in Resources */,
+				A74828B613C8224600E8FB45 /* MunicipioController.xib in Resources */,
+				A74828BB13C8247400E8FB45 /* GasolinerasController.xib in Resources */,
+				A74828C013C8270700E8FB45 /* GasolineraController.xib in Resources */,
+				A79DDBDC13C89EB500559554 /* gasolinera.png in Resources */,
+				A73B59FA13C8A26E008397C2 /* Default.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A74C7EAF13C6BC4C00C99635 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A74C7EC513C6BC4C00C99635 /* main.m in Sources */,
+				A74C7EC813C6BC4C00C99635 /* litrosdealitroAppDelegate.m in Sources */,
+				A74C7ECE13C6BC4C00C99635 /* MenuController.m in Sources */,
+				A74828AB13C81D8300E8FB45 /* EstadoController.m in Sources */,
+				A74828B513C8224600E8FB45 /* MunicipioController.m in Sources */,
+				A74828BA13C8247400E8FB45 /* GasolinerasController.m in Sources */,
+				A74828BF13C8270700E8FB45 /* GasolineraController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A74C7EC013C6BC4C00C99635 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A74C7EC113C6BC4C00C99635 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A74C7EC913C6BC4C00C99635 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A74C7ECA13C6BC4C00C99635 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		A74C7ECF13C6BC4C00C99635 /* MenuController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A74C7ED013C6BC4C00C99635 /* en */,
+			);
+			name = MenuController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A74C7ED213C6BC4C00C99635 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A74C7ED313C6BC4C00C99635 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		A74C7ED513C6BC4C00C99635 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "litrosdealitro/litrosdealitro-Prefix.pch";
+				INFOPLIST_FILE = "litrosdealitro/litrosdealitro-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A74C7ED613C6BC4C00C99635 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "litrosdealitro/litrosdealitro-Prefix.pch";
+				INFOPLIST_FILE = "litrosdealitro/litrosdealitro-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A74C7EAD13C6BC4C00C99635 /* Build configuration list for PBXProject "litrosdealitro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A74C7ED213C6BC4C00C99635 /* Debug */,
+				A74C7ED313C6BC4C00C99635 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A74C7ED413C6BC4C00C99635 /* Build configuration list for PBXNativeTarget "litrosdealitro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A74C7ED513C6BC4C00C99635 /* Debug */,
+				A74C7ED613C6BC4C00C99635 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A74C7EAA13C6BC4C00C99635 /* Project object */;
+}
