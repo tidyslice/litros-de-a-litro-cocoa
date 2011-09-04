@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ASIHTTPRequest.h"
 
 @interface EstadoController : UITableViewController {
-    
-    NSArray *estados;
+  ASIHTTPRequest *request;
+  NSArray *estados;
     
 }
 
