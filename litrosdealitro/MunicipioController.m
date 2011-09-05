@@ -27,7 +27,7 @@
 @synthesize estado;
 
 -(id)initWithEstado:(NSInteger)state {
-  self = [super initWithStyle:UITableViewStylePlain];
+  self = [super initWithStyle:UITableViewStyleGrouped];
   if (self) {
     self.title  = @"Municipios";
     self.estado = state; 

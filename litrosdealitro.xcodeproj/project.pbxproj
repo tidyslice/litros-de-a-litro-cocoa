@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		A71970E814144D2800D4C5DC /* FullImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A71970E714144D2800D4C5DC /* FullImageTableViewCell.m */; };
+		A71970F8141472E300D4C5DC /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A71970EC141472E300D4C5DC /* EGOCache.m */; };
+		A71970F9141472E300D4C5DC /* EGOImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A71970EF141472E300D4C5DC /* EGOImageButton.m */; };
+		A71970FA141472E300D4C5DC /* EGOImageLoadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A71970F2141472E300D4C5DC /* EGOImageLoadConnection.m */; };
+		A71970FB141472E300D4C5DC /* EGOImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A71970F4141472E300D4C5DC /* EGOImageLoader.m */; };
+		A71970FC141472E300D4C5DC /* EGOImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A71970F7141472E300D4C5DC /* EGOImageView.m */; };
+		A719710014147AB700D4C5DC /* GasStationMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = A71970FF14147AB700D4C5DC /* GasStationMarker.m */; };
 		A7310CC11412F04400C788EF /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = A7310CAC1412F04400C788EF /* ASIAuthenticationDialog.m */; };
 		A7310CC21412F04400C788EF /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A7310CAF1412F04400C788EF /* ASIDataCompressor.m */; };
 		A7310CC31412F04400C788EF /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A7310CB11412F04400C788EF /* ASIDataDecompressor.m */; };
@@ -63,6 +69,18 @@
 /* Begin PBXFileReference section */
 		A71970E614144D2800D4C5DC /* FullImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullImageTableViewCell.h; sourceTree = "<group>"; };
 		A71970E714144D2800D4C5DC /* FullImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullImageTableViewCell.m; sourceTree = "<group>"; };
+		A71970EB141472E300D4C5DC /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
+		A71970EC141472E300D4C5DC /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
+		A71970EE141472E300D4C5DC /* EGOImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageButton.h; sourceTree = "<group>"; };
+		A71970EF141472E300D4C5DC /* EGOImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageButton.m; sourceTree = "<group>"; };
+		A71970F1141472E300D4C5DC /* EGOImageLoadConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageLoadConnection.h; sourceTree = "<group>"; };
+		A71970F2141472E300D4C5DC /* EGOImageLoadConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoadConnection.m; sourceTree = "<group>"; };
+		A71970F3141472E300D4C5DC /* EGOImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageLoader.h; sourceTree = "<group>"; };
+		A71970F4141472E300D4C5DC /* EGOImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoader.m; sourceTree = "<group>"; };
+		A71970F6141472E300D4C5DC /* EGOImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageView.h; sourceTree = "<group>"; };
+		A71970F7141472E300D4C5DC /* EGOImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageView.m; sourceTree = "<group>"; };
+		A71970FE14147AB700D4C5DC /* GasStationMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GasStationMarker.h; sourceTree = "<group>"; };
+		A71970FF14147AB700D4C5DC /* GasStationMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GasStationMarker.m; sourceTree = "<group>"; };
 		A7310CAB1412F04400C788EF /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		A7310CAC1412F04400C788EF /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		A7310CAD1412F04400C788EF /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -164,6 +182,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A71970EA141472E300D4C5DC /* EGOImageLoading */ = {
+			isa = PBXGroup;
+			children = (
+				A71970EB141472E300D4C5DC /* EGOCache.h */,
+				A71970EC141472E300D4C5DC /* EGOCache.m */,
+				A71970ED141472E300D4C5DC /* EGOImageButton */,
+				A71970F0141472E300D4C5DC /* EGOImageLoader */,
+				A71970F5141472E300D4C5DC /* EGOImageView */,
+			);
+			path = EGOImageLoading;
+			sourceTree = "<group>";
+		};
+		A71970ED141472E300D4C5DC /* EGOImageButton */ = {
+			isa = PBXGroup;
+			children = (
+				A71970EE141472E300D4C5DC /* EGOImageButton.h */,
+				A71970EF141472E300D4C5DC /* EGOImageButton.m */,
+			);
+			path = EGOImageButton;
+			sourceTree = "<group>";
+		};
+		A71970F0141472E300D4C5DC /* EGOImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				A71970F1141472E300D4C5DC /* EGOImageLoadConnection.h */,
+				A71970F2141472E300D4C5DC /* EGOImageLoadConnection.m */,
+				A71970F3141472E300D4C5DC /* EGOImageLoader.h */,
+				A71970F4141472E300D4C5DC /* EGOImageLoader.m */,
+			);
+			path = EGOImageLoader;
+			sourceTree = "<group>";
+		};
+		A71970F5141472E300D4C5DC /* EGOImageView */ = {
+			isa = PBXGroup;
+			children = (
+				A71970F6141472E300D4C5DC /* EGOImageView.h */,
+				A71970F7141472E300D4C5DC /* EGOImageView.m */,
+			);
+			path = EGOImageView;
+			sourceTree = "<group>";
+		};
+		A71970FD14147A9E00D4C5DC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A71970FE14147AB700D4C5DC /* GasStationMarker.h */,
+				A71970FF14147AB700D4C5DC /* GasStationMarker.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		A7310CAA1412F04400C788EF /* ASIHttpRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +324,8 @@
 		A74C7EBD13C6BC4C00C99635 /* litrosdealitro */ = {
 			isa = PBXGroup;
 			children = (
+				A71970FD14147A9E00D4C5DC /* Models */,
+				A71970EA141472E300D4C5DC /* EGOImageLoading */,
 				A7310CFD14131AE000C788EF /* json */,
 				A7310CD31412F20000C788EF /* Helpers */,
 				A7310CAA1412F04400C788EF /* ASIHttpRequest */,
@@ -433,6 +503,12 @@
 				A7310D0C14131AE000C788EF /* SBJsonParser.m in Sources */,
 				A7310D0D14131AE000C788EF /* SBJsonWriter.m in Sources */,
 				A71970E814144D2800D4C5DC /* FullImageTableViewCell.m in Sources */,
+				A71970F8141472E300D4C5DC /* EGOCache.m in Sources */,
+				A71970F9141472E300D4C5DC /* EGOImageButton.m in Sources */,
+				A71970FA141472E300D4C5DC /* EGOImageLoadConnection.m in Sources */,
+				A71970FB141472E300D4C5DC /* EGOImageLoader.m in Sources */,
+				A71970FC141472E300D4C5DC /* EGOImageView.m in Sources */,
+				A719710014147AB700D4C5DC /* GasStationMarker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

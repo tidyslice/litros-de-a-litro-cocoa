@@ -133,15 +133,6 @@
   return cell;
 }
 
-/*- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  NSLog(@"heightForRowAtIndexPath");
-  if (indexPath.row == 6 ) {
-    return 768;
-  } else {
-    return 44;
-  }
-}*/
 
 
 #pragma mark - Table view delegate

@@ -103,7 +103,8 @@
     
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
-      cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+      cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
+                                     reuseIdentifier:CellIdentifier] autorelease];
   }
   NSDictionary *estado = [self.estados objectAtIndex:indexPath.row];
   cell.textLabel.text = [estado valueForKey:@"desc"];
