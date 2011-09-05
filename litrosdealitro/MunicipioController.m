@@ -7,166 +7,136 @@
 //
 
 #import "MunicipioController.h"
+
+#import "JSON.h"
+#import "Constants.h"
 #import "GasolinerasController.h"
+
+@interface MunicipioController ()
+
+- (void)loadMunicipios;
+- (void)loadMunicipiosStub;
+- (void)updateMunicipios:(NSString *)jsonMunicipios;
+
+@end
 
 @implementation MunicipioController
 
 @synthesize municipios;
+@synthesize request;
 @synthesize estado;
 
--(id)initWithEstado:(NSString *)state {
-    self = [super initWithStyle:UITableViewStylePlain];
-    if (self) {
-        self.title  = @"Municipios";
-        self.estado = state;
-        self.municipios = [NSArray arrayWithObjects:@"Alvaro Obregón",@"Azcapotzalco",@"Benito Juárez",@"Coyoacán",@"Cuajimalpa",@"Cuauhtémoc",@"Gustavo A. Madero",@"Iztacalco",@"Iztapalapa",@"Magdalena Contreras",@"Miguel Hidalgo",@"Milpa Alta",@"Venustiano Carranza",@"Tláhuac",@"Tlalpan",@"Xochimilco",nil];
-    }
-    return self;
+-(id)initWithEstado:(NSInteger)state {
+  self = [super initWithStyle:UITableViewStylePlain];
+  if (self) {
+    self.title  = @"Municipios";
+    self.estado = state; 
+    self.municipios = [NSArray array];
+  }
+  return self;
 }
 
 
 - (void)dealloc
 {
-    [estado release];
-    [municipios release];
-    [super dealloc];
+  [request clearDelegatesAndCancel];
+  [request release];
+  [municipios release];
+  [super dealloc];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  [super viewDidLoad];
+  [self loadMunicipiosStub];
 }
 
 - (void)viewDidUnload
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+  [super viewDidUnload];
 }
 
-- (void)viewWillAppear:(BOOL)animated
+#pragma mark private methods
+- (void)loadMunicipios
 {
-    [super viewWillAppear:animated];
+  NSString *urlRequest = [NSString stringWithFormat:MUNICIPIOS_SERVICE_URL, [NSNumber numberWithInteger:self.estado]];
+  NSLog(@"urlRequest %@", urlRequest);
+  request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:urlRequest]];
+  [request setDelegate:self];
+  [request startSynchronous]; 
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)loadMunicipiosStub 
 {
-    [super viewDidAppear:animated];
+  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"municipios" ofType:@"json"];
+  
+  [self updateMunicipios:[NSString stringWithContentsOfFile:filePath encoding:NSASCIIStringEncoding error:nil]];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
+- (void)updateMunicipios:(NSString *)jsonMunicipios
 {
-    [super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+  self.municipios = [jsonMunicipios JSONValue];
+  [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
-
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
-
     return [self.municipios count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+  static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  if (cell == nil) {
+    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+  }
+  NSDictionary *municipio = [self.municipios objectAtIndex:indexPath.row];
+  cell.textLabel.text = [municipio valueForKey:@"desc"];
     
-    cell.textLabel.text = [self.municipios objectAtIndex:indexPath.row];
-    
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-    return cell;
+  cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+  return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+#pragma mark - ASIHTTPRequest Delegate Methods
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)requestFinished:(ASIHTTPRequest *)theRequest
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+  
+  [self updateMunicipios:[theRequest responseString]];
+  
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+- (void)requestFailed:(ASIHTTPRequest *)theRequest
 {
+  NSError *error = [theRequest error];
+  NSLog(@"Error %@", error);
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    
-    GasolinerasController *detailViewController = [[GasolinerasController alloc] initWithStyle:UITableViewStyleGrouped];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
+{       
+  
+  NSDictionary *municipio = [self.municipios objectAtIndex:indexPath.row];
+  NSNumber *idMunicipio   = [municipio objectForKey:@"id"];
+  GasolinerasController *detailViewController = [[GasolinerasController alloc] 
+                                                 initWithMunicipio:[idMunicipio integerValue]];
+  
+  [self.navigationController pushViewController:detailViewController animated:YES];
+  [detailViewController release];
      
 }
 

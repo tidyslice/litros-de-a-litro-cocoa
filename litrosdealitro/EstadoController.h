@@ -10,6 +10,7 @@
 #import "ASIHTTPRequest.h"
 
 @interface EstadoController : UITableViewController {
+  
   ASIHTTPRequest *request;
   NSArray *estados;
     

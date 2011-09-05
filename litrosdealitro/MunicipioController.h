@@ -7,18 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ASIHTTPRequest.h"
 
 @interface MunicipioController : UITableViewController {
-    NSString *estado;
-    NSArray *municipios;
+    
+  NSInteger estado;
+  NSArray *municipios;
+  ASIHTTPRequest *request;
+  
 }
 
 
-@property(nonatomic, retain) NSString *estado;
+@property(nonatomic, assign) NSInteger estado;
 @property(nonatomic, retain) NSArray *municipios;
+@property(nonatomic, retain) ASIHTTPRequest *request;
 
-
--(id)initWithEstado:(NSString *)state;
+-(id)initWithEstado:(NSInteger)state;
 
 @end

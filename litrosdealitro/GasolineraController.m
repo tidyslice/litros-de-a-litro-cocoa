@@ -8,37 +8,48 @@
 
 #import "GasolineraController.h"
 
+#import "JSON.h"
+#import "Constants.h"
+
+@interface GasolineraController ()
+
+- (void)loadGasStation;
+- (void)loadGasStationStub;
+- (void)updateGasStation:(NSString *)jsonStation;
+
+@end
 
 @implementation GasolineraController
 
+@synthesize request;
+@synthesize gasFoto;
 @synthesize infoView;
 @synthesize mapaView;
-@synthesize gasFoto;
+@synthesize stationId;
+@synthesize gasStation;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithGasStation:(NSString *)theId 
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+  self = [super initWithNibName:@"GasolineraController" bundle:nil];
+  if (self) {
+    self.stationId = theId;
+  }
+  return self;
 }
 
 - (void)dealloc
 {
-    [infoView release];
-    [mapaView release];
-    [gasFoto release];
-    [super dealloc];
+  [request clearDelegatesAndCancel];
+  [request release];
+  [gasFoto release];
+  [infoView release];
+  [mapaView release];  
+  [stationId release];
+  [gasStation release];
+  [super dealloc];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
+
 
 #pragma mark -
 #pragma mark Actions
@@ -54,31 +65,67 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    UISegmentedControl *toggleViewControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects: @"Info", @"Mapa", nil]];
-    [toggleViewControl addTarget:self action:@selector(togglePanels:) forControlEvents:UIControlEventValueChanged];
-    toggleViewControl.selectedSegmentIndex  = 0;
-    toggleViewControl.segmentedControlStyle = UISegmentedControlStyleBar;
+  [super viewDidLoad];
+  [self loadGasStation];
+
+  UISegmentedControl *toggleViewControl = [[UISegmentedControl alloc] 
+                                           initWithItems:[NSArray arrayWithObjects: @"Info", @"Mapa", nil]];
+  [toggleViewControl addTarget:self action:@selector(togglePanels:) forControlEvents:UIControlEventValueChanged];
+  toggleViewControl.selectedSegmentIndex  = 0;
+  toggleViewControl.segmentedControlStyle = UISegmentedControlStyleBar;
     
-    UIBarButtonItem *toggleViewBarItem = [[UIBarButtonItem alloc] initWithCustomView:toggleViewControl];
-    self.navigationItem.rightBarButtonItem = toggleViewBarItem;
-    [toggleViewControl release];
-    [toggleViewBarItem release];
+  UIBarButtonItem *toggleViewBarItem = [[UIBarButtonItem alloc] initWithCustomView:toggleViewControl];
+  self.navigationItem.rightBarButtonItem = toggleViewBarItem;
+  [toggleViewControl release];
+  [toggleViewBarItem release];
     
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+   
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+#pragma mark private methods
+- (void)loadGasStation 
 {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+  
+  NSString *urlRequest = [NSString stringWithFormat:STATION_SERVICE_URL, self.stationId];
+  NSLog(@"urlRequest %@", urlRequest);
+  request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:urlRequest]];
+  [request setDelegate:self];
+  [request startSynchronous]; 
+
 }
+
+- (void)loadGasStationStub 
+{
+  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"station" ofType:@"json"];
+  
+  [self updateGasStation:[NSString stringWithContentsOfFile:filePath encoding:NSASCIIStringEncoding error:nil]];
+}
+
+- (void)updateGasStation:(NSString *)jsonStation
+{
+  self.gasStation = [jsonStation JSONValue];
+  NSLog(@"jsonstation %@", jsonStation);                    
+}
+
+#pragma mark ASIHTTPRequest delegate methods
+
+- (void)requestFinished:(ASIHTTPRequest *)theRequest
+{
+  
+  [self updateGasStation:[theRequest responseString]];
+  
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)theRequest
+{
+  NSError *error = [theRequest error];
+  NSLog(@"Error %@", error);
+}
+
 
 @end

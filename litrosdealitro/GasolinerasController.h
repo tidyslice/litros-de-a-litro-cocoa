@@ -8,11 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ASIHTTPRequest.h"
 
-@interface GasolinerasController : UITableViewController {
-    NSArray *gasolineras;
+@interface GasolinerasController : UITableViewController 
+{
+  NSInteger municipio;
+  NSArray *gasolineras;    
+  
 }
 
+@property(nonatomic, assign) NSInteger municipio;
 @property(nonatomic, retain) NSArray *gasolineras;
+@property(nonatomic, retain) ASIHTTPRequest *request;
+
+- (id)initWithMunicipio:(NSInteger)theMunicipio;
 
 @end

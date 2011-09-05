@@ -8,12 +8,15 @@
 
 #import "EstadoController.h"
 
+#import "Json.h"
 #import "Constants.h"
 #import "MunicipioController.h"
 
 @interface EstadoController ()
 
 - (void)loadEstados;
+- (void)loadEstadosStub;
+- (void)updateEstados:(NSString *)jsonEstados;
 
 @end
 
@@ -25,8 +28,8 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.title   = @"Estados";
-        self.estados = [NSArray arrayWithObjects:@"Aguascalientes",@"Baja California",@"Baja California Sur",@"Campeche",@"Chiapas",@"Chihuahua",@"Coahuila",@"Colima",@"Distrito Federal",@"Durango",@"Estado de México",@"Guanajuato",@"Guerrero",@"Hidalgo",@"Jalisco",@"Michoacán",@"Morelos",@"Nayarit",@"Nuevo León",@"Oaxaca",@"Puebla",@"Querétaro",@"Quintana Roo",@"San Luis Potosí",@"Sinaloa",@"Sonora",@"Tabasco",@"Tamaulipas",@"Tlaxcala",@"Veracruz",@"Yucatán",@"Zacatecas", nil];
+      self.title   = @"Estados";
+      //self.estados = [NSArray array];
     }
     return self;
 }
@@ -48,14 +51,24 @@
   [request setDelegate:self];
   [request startSynchronous]; 
 }
+- (void)loadEstadosStub {
+  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"estados" ofType:@"json"];
+
+  [self updateEstados:[NSString stringWithContentsOfFile:filePath encoding:NSASCIIStringEncoding error:nil]];
+}
+- (void)updateEstados:(NSString *)jsonEstados 
+{    
+  self.estados = [jsonEstados JSONValue];
+  [self.tableView reloadData];
+}
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+  [super viewDidLoad];
 
-   
+  [self loadEstadosStub];
 }
 
 - (void)viewDidUnload
@@ -80,22 +93,23 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [estados count];
+
+  return [self.estados count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+  static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  if (cell == nil) {
+      cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+  }
+  NSDictionary *estado = [self.estados objectAtIndex:indexPath.row];
+  cell.textLabel.text = [estado valueForKey:@"desc"];
+  cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
     
-    cell.textLabel.text = [self.estados objectAtIndex:indexPath.row];
-    cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
-    
-    return cell;
+  return cell;
 }
 
 
@@ -104,26 +118,30 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSString *chosenState = [self.estados objectAtIndex:indexPath.row];
-    
-    MunicipioController *municipioController = [[MunicipioController alloc] initWithEstado:chosenState];
-     [self.navigationController pushViewController:municipioController animated:YES];
-     [municipioController release];
-   
+  NSDictionary *chosenState = [self.estados objectAtIndex:indexPath.row];
+  NSNumber *idState = [chosenState objectForKey:@"id"];
+
+  MunicipioController *municipioController = [[MunicipioController alloc] 
+                                                initWithEstado:[idState integerValue]];
+  [self.navigationController pushViewController:municipioController animated:YES];
+  [municipioController release];
+  
 }
+
 
 #pragma mark - ASIHTTPRequest Delegate Methods
 
 - (void)requestFinished:(ASIHTTPRequest *)theRequest
 {
 
-  NSString *responseString = [theRequest responseString];
+  [self updateEstados:[theRequest responseString]];
   
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)theRequest
 {
   NSError *error = [theRequest error];
+  NSLog(@"Error %@", error);
 }
 
 @end
