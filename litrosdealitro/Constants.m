@@ -16,6 +16,8 @@ NSString * const MUNICIPIOS_SERVICE_URL       = @"http://178.63.61.196:8989/temp
 
 NSString * const NEARBY_STATIONS_SERVICE_URL  = @"http://178.63.61.196:8989/temp-gasolineras-back/v1/getNearGasStation?lt=%@&ln=-%@&d=%@&l=%@";
 
+NSString * const MUNICIPIO_STATIONS_SERVICE_URL = @"http://178.63.61.196:8989/temp-gasolineras-back/v1/getNearStationsByIdEstadoAndIdMunicipioDelegacion?idEstado=%@&idMunicipio=%@";
+
 @implementation Constants
 
 @end

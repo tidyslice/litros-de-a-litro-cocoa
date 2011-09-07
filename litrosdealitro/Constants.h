@@ -16,6 +16,8 @@ extern NSString * const MUNICIPIOS_SERVICE_URL;
 
 extern NSString * const NEARBY_STATIONS_SERVICE_URL;
 
+extern NSString * const MUNICIPIO_STATIONS_SERVICE_URL;
+
 @interface Constants : NSObject
 
 @end

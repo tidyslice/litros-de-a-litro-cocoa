@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MenuController : UITableViewController {
-
+  NSArray *icons;
+  NSArray *titles;
 }
 
 

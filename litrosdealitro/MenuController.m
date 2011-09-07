@@ -8,8 +8,20 @@
 
 #import "MenuController.h"
 #import "EstadoController.h"
+#import "CercanasController.h"
 
 @implementation MenuController
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+  self = [super initWithCoder:aDecoder];
+  if (self) {
+    icons = [[NSArray arrayWithObjects:@"search_icon.png", @"cercanas_icon.png", @"price_icon.png",
+            @"info_icon.png", nil] retain];
+    titles = [[NSArray arrayWithObjects:@"Buscar",@"Cercanas",@"Precios",@"Info", nil] retain];
+  }
+  return self;
+}
 
 - (void)viewDidLoad
 {
@@ -17,34 +29,13 @@
     self.title = @"Litros de a litro";
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-/*
- // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Return YES for supported orientations.
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
- */
 
+	return YES;
+}
+ 
+#pragma mark UITableView DataSource Methods
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -53,7 +44,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 4;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -63,27 +54,17 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+  static NSString *CellIdentifier = @"Cell";
+   
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  if (cell == nil) {
+    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+  }
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
-    
-    switch (indexPath.row) {
-        case 0:
-            cell.imageView.image = [UIImage imageNamed:@"search_icon.png"];
-            cell.textLabel.text = @"Buscar";
-            
-            break;
-        case 1:    
-            cell.imageView.image = [UIImage imageNamed:@"cercanas_icon.png"];
-            cell.textLabel.text = @"Cercanas";
-        default:
-            break;
-    }
-    cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
-    return cell;
+  cell.imageView.image = [UIImage imageNamed:[icons objectAtIndex:indexPath.row]];
+  cell.textLabel.text = [titles objectAtIndex:indexPath.row];
+  cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
+  return cell;
 }
 
 
@@ -94,9 +75,13 @@
 
     if (indexPath.row == 0) {
             
-        UIViewController *estadoController = [[EstadoController alloc] initWithStyle:UITableViewStyleGrouped];
-        [self.navigationController pushViewController:estadoController animated:YES];
-        [estadoController release];
+      UIViewController *estadoController = [[EstadoController alloc] initWithStyle:UITableViewStyleGrouped];
+      [self.navigationController pushViewController:estadoController animated:YES];
+      [estadoController release];
+    } else if (indexPath.row == 1) {
+      UIViewController *cercanasController = [[CercanasController alloc] initWithStyle:UITableViewStyleGrouped];
+      [self.navigationController pushViewController:cercanasController animated:YES];
+      [cercanasController release];
     }
 }
 
@@ -107,8 +92,10 @@
 }
 
 - (void)dealloc
-{
-    [super dealloc];
+{ 
+  [icons release];
+  [titles release];
+  [super dealloc];
 }
 
 @end

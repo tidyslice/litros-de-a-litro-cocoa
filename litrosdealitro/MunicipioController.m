@@ -39,8 +39,6 @@
 
 - (void)dealloc
 {
-  [request clearDelegatesAndCancel];
-  [request release];
   [municipios release];
   [super dealloc];
 }
@@ -51,7 +49,7 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  [self loadMunicipiosStub];
+  [self loadMunicipios];
 }
 
 - (void)viewDidUnload
@@ -122,6 +120,13 @@
 {
   NSError *error = [theRequest error];
   NSLog(@"Error %@", error);
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" 
+                                                  message:@"Error conectándose al servidor" 
+                                                 delegate:nil 
+                                        cancelButtonTitle:@"OK" 
+                                        otherButtonTitles:nil];
+  [alert show];
+  [alert release];
 }
 
 
@@ -133,7 +138,8 @@
   NSDictionary *municipio = [self.municipios objectAtIndex:indexPath.row];
   NSNumber *idMunicipio   = [municipio objectForKey:@"id"];
   GasolinerasController *detailViewController = [[GasolinerasController alloc] 
-                                                 initWithMunicipio:[idMunicipio integerValue]];
+                                                 initWithMunicipio:[idMunicipio integerValue]
+                                                 andEstado:self.estado];
   
   [self.navigationController pushViewController:detailViewController animated:YES];
   [detailViewController release];

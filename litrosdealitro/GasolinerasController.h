@@ -12,15 +12,16 @@
 
 @interface GasolinerasController : UITableViewController 
 {
-  NSInteger municipio;
-  NSArray *gasolineras;    
-  
+  NSInteger estado;
+  NSInteger municipio;  
+  NSArray *gasolineras;      
 }
 
+@property(nonatomic, assign) NSInteger estado;
 @property(nonatomic, assign) NSInteger municipio;
 @property(nonatomic, retain) NSArray *gasolineras;
 @property(nonatomic, retain) ASIHTTPRequest *request;
 
-- (id)initWithMunicipio:(NSInteger)theMunicipio;
+- (id)initWithMunicipio:(NSInteger)theMunicipio andEstado:(NSInteger)theEstado;
 
 @end

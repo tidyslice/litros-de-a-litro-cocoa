@@ -14,6 +14,13 @@
 		A71970FB141472E300D4C5DC /* EGOImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A71970F4141472E300D4C5DC /* EGOImageLoader.m */; };
 		A71970FC141472E300D4C5DC /* EGOImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A71970F7141472E300D4C5DC /* EGOImageView.m */; };
 		A719710014147AB700D4C5DC /* GasStationMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = A71970FF14147AB700D4C5DC /* GasStationMarker.m */; };
+		A71F85D41416D3BC00584F35 /* GasSiteController.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F85D21416D3BB00584F35 /* GasSiteController.m */; };
+		A71F85D51416D3BC00584F35 /* GasSiteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A71F85D31416D3BC00584F35 /* GasSiteController.xib */; };
+		A71F85D81416E3EE00584F35 /* info_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A71F85D61416E3EE00584F35 /* info_icon.png */; };
+		A71F85D91416E3EE00584F35 /* price_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A71F85D71416E3EE00584F35 /* price_icon.png */; };
+		A71F85E21416E64600584F35 /* CercanasController.m in Sources */ = {isa = PBXBuildFile; fileRef = A71F85E01416E64600584F35 /* CercanasController.m */; };
+		A71F85E31416E64600584F35 /* CercanasController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A71F85E11416E64600584F35 /* CercanasController.xib */; };
+		A71F85E51416EB8900584F35 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71F85E41416EB8900584F35 /* CoreLocation.framework */; };
 		A7310CC11412F04400C788EF /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = A7310CAC1412F04400C788EF /* ASIAuthenticationDialog.m */; };
 		A7310CC21412F04400C788EF /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A7310CAF1412F04400C788EF /* ASIDataCompressor.m */; };
 		A7310CC31412F04400C788EF /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A7310CB11412F04400C788EF /* ASIDataDecompressor.m */; };
@@ -81,6 +88,15 @@
 		A71970F7141472E300D4C5DC /* EGOImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageView.m; sourceTree = "<group>"; };
 		A71970FE14147AB700D4C5DC /* GasStationMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GasStationMarker.h; sourceTree = "<group>"; };
 		A71970FF14147AB700D4C5DC /* GasStationMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GasStationMarker.m; sourceTree = "<group>"; };
+		A71F85D11416D3BB00584F35 /* GasSiteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GasSiteController.h; sourceTree = "<group>"; };
+		A71F85D21416D3BB00584F35 /* GasSiteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GasSiteController.m; sourceTree = "<group>"; };
+		A71F85D31416D3BC00584F35 /* GasSiteController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GasSiteController.xib; sourceTree = "<group>"; };
+		A71F85D61416E3EE00584F35 /* info_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info_icon.png; path = images/info_icon.png; sourceTree = SOURCE_ROOT; };
+		A71F85D71416E3EE00584F35 /* price_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = price_icon.png; path = images/price_icon.png; sourceTree = SOURCE_ROOT; };
+		A71F85DF1416E64600584F35 /* CercanasController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CercanasController.h; sourceTree = "<group>"; };
+		A71F85E01416E64600584F35 /* CercanasController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CercanasController.m; sourceTree = "<group>"; };
+		A71F85E11416E64600584F35 /* CercanasController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CercanasController.xib; sourceTree = "<group>"; };
+		A71F85E41416EB8900584F35 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A7310CAB1412F04400C788EF /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		A7310CAC1412F04400C788EF /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		A7310CAD1412F04400C788EF /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -167,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A71F85E51416EB8900584F35 /* CoreLocation.framework in Frameworks */,
 				A757FCA114144A12002D3025 /* QuartzCore.framework in Frameworks */,
 				A7310CD21412F18900C788EF /* libz.1.2.3.dylib in Frameworks */,
 				A7310CD01412F17A00C788EF /* MobileCoreServices.framework in Frameworks */,
@@ -308,6 +325,7 @@
 		A74C7EB613C6BC4C00C99635 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A71F85E41416EB8900584F35 /* CoreLocation.framework */,
 				A757FCA014144A12002D3025 /* QuartzCore.framework */,
 				A7310CD11412F18900C788EF /* libz.1.2.3.dylib */,
 				A7310CCF1412F17A00C788EF /* MobileCoreServices.framework */,
@@ -353,6 +371,8 @@
 		A7C2AAE913C7D34B00FD47E2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A71F85D61416E3EE00584F35 /* info_icon.png */,
+				A71F85D71416E3EE00584F35 /* price_icon.png */,
 				A757FC9214140E95002D3025 /* orange_light.png */,
 				A757FC8A14140D1E002D3025 /* green_light.png */,
 				A757FC8B14140D1E002D3025 /* no_light.png */,
@@ -382,6 +402,10 @@
 				A74828B813C8247400E8FB45 /* GasolinerasController.m */,
 				A74828BC13C8270700E8FB45 /* GasolineraController.h */,
 				A74828BD13C8270700E8FB45 /* GasolineraController.m */,
+				A71F85D11416D3BB00584F35 /* GasSiteController.h */,
+				A71F85D21416D3BB00584F35 /* GasSiteController.m */,
+				A71F85DF1416E64600584F35 /* CercanasController.h */,
+				A71F85E01416E64600584F35 /* CercanasController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -389,6 +413,8 @@
 		A7C2AAF013C7D3CD00FD47E2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A71F85E11416E64600584F35 /* CercanasController.xib */,
+				A71F85D31416D3BC00584F35 /* GasSiteController.xib */,
 				A74828BE13C8270700E8FB45 /* GasolineraController.xib */,
 				A74828B913C8247400E8FB45 /* GasolinerasController.xib */,
 				A74828B413C8224600E8FB45 /* MunicipioController.xib */,
@@ -470,6 +496,10 @@
 				A757FC9114140D1E002D3025 /* red_light.png in Resources */,
 				A757FC9314140E95002D3025 /* orange_light.png in Resources */,
 				A757FC95141416B1002D3025 /* station.json in Resources */,
+				A71F85D51416D3BC00584F35 /* GasSiteController.xib in Resources */,
+				A71F85D81416E3EE00584F35 /* info_icon.png in Resources */,
+				A71F85D91416E3EE00584F35 /* price_icon.png in Resources */,
+				A71F85E31416E64600584F35 /* CercanasController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +539,8 @@
 				A71970FB141472E300D4C5DC /* EGOImageLoader.m in Sources */,
 				A71970FC141472E300D4C5DC /* EGOImageView.m in Sources */,
 				A719710014147AB700D4C5DC /* GasStationMarker.m in Sources */,
+				A71F85D41416D3BC00584F35 /* GasSiteController.m in Sources */,
+				A71F85E21416E64600584F35 /* CercanasController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,8 +37,6 @@
 - (void)dealloc
 {
   [estados release];
-  [request clearDelegatesAndCancel];
-  [request release];
   [super dealloc];
     
 }
@@ -68,7 +66,7 @@
 {
   [super viewDidLoad];
 
-  [self loadEstadosStub];
+  [self loadEstados];
 }
 
 - (void)viewDidUnload
@@ -143,6 +141,13 @@
 {
   NSError *error = [theRequest error];
   NSLog(@"Error %@", error);
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" 
+                                                   message:@"Error conectándose al servidor" 
+                                                 delegate:nil 
+                                         cancelButtonTitle:@"OK" 
+                                         otherButtonTitles:nil];
+  [alert show];
+  [alert release];
 }
 
 @end

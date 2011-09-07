@@ -11,13 +11,16 @@
 #import "JSON.h"
 #import "Constants.h"
 #import "EGOImageView.h"
+#import "GasSiteController.h"
 #import "GasStationMarker.h"
 #import <QuartzCore/QuartzCore.h>
 
 
 @interface GasolineraController ()
 
+- (void)dialStation;
 - (void)loadGasStation;
+- (void)openGasStationSite;
 - (void)loadGasStationStub;
 - (void)addGasStationToMap;
 - (void)updateGasStation:(NSString *)jsonStation;
@@ -45,8 +48,7 @@
 
 - (void)dealloc
 {
-  [request clearDelegatesAndCancel];
-  [request release];
+  
   [infoView release];
   [mapaView release];  
   [stationId release];
@@ -71,7 +73,7 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  [self loadGasStationStub];
+  [self loadGasStation];
 
   UISegmentedControl *toggleViewControl = [[UISegmentedControl alloc] 
                                            initWithItems:[NSArray arrayWithObjects: @"Info", @"Mapa", nil]];
@@ -174,6 +176,35 @@
   [self.mapa regionThatFits:region];
 }
 
+- (void)openGasStationSite 
+{
+  GasSiteController *detailViewController = [[GasSiteController alloc] 
+                                             initWitSiteUrl:[self.gasStation valueForKey:@"urlHistoria"]];
+  
+  
+  [UIView beginAnimations:nil context:NULL];
+  [UIView setAnimationDuration: 0.50];
+  
+  
+  [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.navigationController.view cache:YES];
+  
+  
+  
+  
+  [self.navigationController pushViewController:detailViewController animated:NO];
+  
+  [detailViewController release];    
+  
+  [UIView commitAnimations];
+}
+
+
+- (void)dialStation
+{
+  NSString *telefono = [NSString stringWithFormat:@"tel:%@", [self.gasStation valueForKey:@"telefono"]];
+  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:telefono]];
+}
+
 #pragma mark ASIHTTPRequest delegate methods
 
 - (void)requestFinished:(ASIHTTPRequest *)theRequest
@@ -187,6 +218,13 @@
 {
   NSError *error = [theRequest error];
   NSLog(@"Error %@", error);
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" 
+                                                  message:@"Error conectándose al servidor" 
+                                                 delegate:nil 
+                                        cancelButtonTitle:@"OK" 
+                                        otherButtonTitles:nil];
+  [alert show];
+  [alert release];
 }
 
 #pragma mark UITableView DataSource Methods
@@ -275,6 +313,15 @@
      return 44;
    }
  }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  if (indexPath.section == 2) {    
+    [self openGasStationSite];            
+  } else if (indexPath.section == 3 ) {
+    [self dialStation];
+  }
+}
 
 
 @end
